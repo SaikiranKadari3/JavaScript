@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotate</title>
+    <style>
+      body {
+        background-image: url(../images/bg.avif);
+        background-size: 100% 100%;
+        display: flex;
+        width: 99%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+        margin-top: 50px;
+      }
+      #rotating {
+        width: 300px;
+        height: 300px;
+      }
+      button {
+        padding: 10px;
+        width: 180px;
+        display: block;
+        margin: auto;
+        background-color: lightskyblue;
+        color: black;
+        border: none;
+        box-shadow: 1px 1px #888888;
+      }
+
+      .container {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        margin-top: 0px;
+        margin-left: 40px;
+        height: 400px;
+        background-color: teal;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: #222;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../images/puppy.webp" id="rotating" />
+
+    <div class="container">
+      <button onclick="rotate(45)">45Deg</button>
+      <button onclick="rotate(90)">90Deg</button>
+      <button onclick="rotate(180)">180Deg</button>
+      <button onclick="rotate(270)">270Deg</button>
+      <button onclick="rotate(0)">Reset</button>
+    </div>
+
+    <script>
+      function rotate(value) {
+        var GetImage = document.getElementById("rotating");
+        GetImage.style.transform = "rotate(" + value + "deg)";
+      }
+    </script>
+  </body>
+</html>
