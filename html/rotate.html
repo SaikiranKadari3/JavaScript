@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rotate</title>
+    <title>Rotate & Filter</title>
     <style>
       body {
         background-image: url(../images/bg.avif);
         background-size: 100% 100%;
-        display: flex;
         width: 99%;
         height: 100%;
+      }
+      .row1 {
+        display: flex;
         align-items: center;
         justify-content: center;
         gap: 100px;
@@ -47,23 +49,81 @@
         background-color: #222;
         color: white;
       }
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 30px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .filters button {
+        background-color: #22223b;
+        border: 2px solid snow;
+        color: whitesmoke;
+        padding: 10px 20px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+      .filters button:hover {
+        background-color: snow;
+        color: #22223b;
+      }
     </style>
   </head>
   <body>
-    <img src="../images/puppy.webp" id="rotating" />
+    <div class="row1">
+      <img src="../images/puppy.webp" id="rotating" />
 
-    <div class="container">
-      <button onclick="rotate(45)">45Deg</button>
-      <button onclick="rotate(90)">90Deg</button>
-      <button onclick="rotate(180)">180Deg</button>
-      <button onclick="rotate(270)">270Deg</button>
-      <button onclick="rotate(0)">Reset</button>
+      <div class="container">
+        <h1>ROTATE</h1>
+        <button onclick="rotate(45)">Rotate 45Deg</button>
+        <button onclick="rotate(90)">Rotate 90Deg</button>
+        <button onclick="rotate(180)">Rotate 180Deg</button>
+        <button onclick="rotate(270)">Rotate 270Deg</button>
+        <button onclick="rotate(0)">Reset</button>
+      </div>
+    </div>
+    <div class="filters">
+      <button onclick="abc()">Blur</button>
+      <button onclick="bright()">Brightness</button>
+      <button onclick="sepia()">Sepia</button>
+      <button onclick="saturate()">Saturate</button>
+      <button onclick="opacity()">Opacity</button>
+      <button onclick="reset()">Reset</button>
     </div>
 
     <script>
       function rotate(value) {
         var GetImage = document.getElementById("rotating");
         GetImage.style.transform = `rotate(${value}deg)`;
+      }
+      function abc() {
+        var image = document.getElementById("rotating");
+        image.style.filter = "blur(5px)";
+      }
+      function bright() {
+        var image = document.getElementById("rotating");
+        image.style.filter = "brightness(200%)";
+      }
+      function sepia() {
+        var image = document.getElementById("rotating");
+        image.style.filter = "sepia(100%)";
+      }
+      function saturate() {
+        var image = document.getElementById("rotating");
+        image.style.filter = "saturate(500%)";
+      }
+      function opacity() {
+        var image = document.getElementById("rotating");
+        image.style.filter = "opacity(50%)";
+      }
+      function reset() {
+        var image = document.getElementById("rotating");
+        image.style.filter = "none";
       }
     </script>
   </body>
