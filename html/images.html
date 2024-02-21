@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 99%;
+        height: 100vh;
+        background-color: wheat;
+      }
+      .container {
+        margin: 10px 50px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        flex-grow: 1;
+      }
+      .images {
+        max-width: 50%;
+        width: 300px;
+        min-width: 30%;
+        height: 300px;
+        border: 3px solid white;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="../images/one.jpeg" class="images" />
+      <img src="../images/two.jpeg" class="images" />
+      <img src="../images/three.jpeg" class="images" />
+      <img src="../images/four.jpg" class="images" />
+      <img src="../images/five.jpg" class="images" />
+      <img src="../images/six.jpg" class="images" />
+    </div>
+    <script>
+      var img = document.getElementsByClassName("images");
+      img[0].addEventListener("click", () => {
+        img[0].setAttribute("src", "../images/seven.jpg");
+      });
+      img[1].addEventListener("click", () => {
+        img[1].setAttribute("src", "../images/eight.jpg");
+      });
+      img[2].addEventListener("click", () => {
+        img[2].setAttribute("src", "../images/nine.jpg");
+      });
+      img[3].addEventListener("click", () => {
+        img[3].setAttribute("src", "../images/ten.jpg");
+      });
+      img[4].addEventListener("click", () => {
+        img[4].setAttribute("src", "../images/eleven.jpg");
+      });
+      img[5].addEventListener("click", () => {
+        img[5].setAttribute("src", "../images/12.jpg");
+      });
+    </script>
+  </body>
+</html>
