@@ -19,6 +19,7 @@
         justify-content: space-around;
         align-items: center;
         background-color: #9cf6f6;
+        font-size: 20px;
       }
       header {
         height: 75px;
@@ -353,6 +354,12 @@
         var button = document.createElement("button");
         button.innerHTML = "See More";
         div.appendChild(button);
+        button.addEventListener("click", function () {
+          window.localStorage.setItem("image", input[i].image);
+          window.localStorage.setItem("title", input[i].title);
+          window.localStorage.setItem("price", input[i].price);
+          window.location.assign("./index1.html");
+        });
         var cart = document.createElement("button");
         cart.setAttribute("class", "cart");
         cart.innerHTML = "Add to Cart";
