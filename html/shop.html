@@ -19,7 +19,6 @@
         justify-content: space-around;
         align-items: center;
         background-color: #9cf6f6;
-        font-size: 20px;
       }
       header {
         height: 75px;
@@ -79,6 +78,7 @@
       }
       nav img {
         width: 35px;
+        cursor: pointer;
       }
       nav span {
         position: absolute;
@@ -327,7 +327,10 @@
       h1.textContent = "EZKART";
       head.appendChild(h1);
       var nav = document.createElement("nav");
-      nav.innerHTML = `<img src="../images/shopping-cart_3737372.png" alt = "Shopping Cart">`;
+      nav.innerHTML = `<img
+        src="shopping-cart_3737372.png"
+        alt="Shopping Cart"
+      />`;
       head.appendChild(nav);
       var span = document.createElement("span");
       nav.appendChild(span);
@@ -335,6 +338,7 @@
       var con = document.createElement("div");
       con.setAttribute("class", "container");
       document.body.appendChild(con);
+      cart1 = [];
       for (let i = 0; i < input.length; i++) {
         var div = document.createElement("div");
         div.setAttribute("class", "card");
@@ -355,10 +359,10 @@
         button.innerHTML = "See More";
         div.appendChild(button);
         button.addEventListener("click", function () {
-          window.localStorage.setItem("image", input[i].image);
-          window.localStorage.setItem("title", input[i].title);
-          window.localStorage.setItem("price", input[i].price);
-          window.location.assign("./index1.html");
+          window.localStorage.setItem("data", JSON.stringify(input[i]));
+          // window.localStorage.setItem("title", input[i].title);
+          // window.localStorage.setItem("price", input[i].price);
+          window.open("./index.html", "_blank");
         });
         var cart = document.createElement("button");
         cart.setAttribute("class", "cart");
@@ -377,240 +381,344 @@
         span.innerHTML = `${c}`;
         a[0].style.display = "none";
         b[0].style.display = "block";
+        cart1.push(input[0]);
+        console.log(cart1);
       });
       b[0].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[0].style.display = "none";
         a[0].style.display = "block";
+        var abc = cart1.indexOf(input[0]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[1].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[1].style.display = "none";
         b[1].style.display = "block";
+        cart1.push(input[1]);
+        console.log(cart1);
       });
       b[1].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[1].style.display = "none";
         a[1].style.display = "block";
+        var abc = cart1.indexOf(input[1]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[2].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[2].style.display = "none";
         b[2].style.display = "block";
+        cart1.push(input[2]);
+        console.log(cart1);
       });
       b[2].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[2].style.display = "none";
         a[2].style.display = "block";
+        var abc = cart1.indexOf(input[2]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[3].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[3].style.display = "none";
         b[3].style.display = "block";
+        cart1.push(input[3]);
+        console.log(cart1);
       });
       b[3].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[3].style.display = "none";
         a[3].style.display = "block";
+        var abc = cart1.indexOf(input[3]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[4].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[4].style.display = "none";
         b[4].style.display = "block";
+        cart1.push(input[4]);
+        console.log(cart1);
       });
       b[4].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[4].style.display = "none";
         a[4].style.display = "block";
+        var abc = cart1.indexOf(input[4]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[5].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[5].style.display = "none";
         b[5].style.display = "block";
+        cart1.push(input[5]);
+        console.log(cart1);
       });
       b[5].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[5].style.display = "none";
         a[5].style.display = "block";
+        var abc = cart1.indexOf(input[5]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[6].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[6].style.display = "none";
         b[6].style.display = "block";
+        cart1.push(input[6]);
+        console.log(cart1);
       });
       b[6].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[6].style.display = "none";
         a[6].style.display = "block";
+        var abc = cart1.indexOf(input[6]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[7].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[7].style.display = "none";
         b[7].style.display = "block";
+        cart1.push(input[7]);
+        console.log(cart1);
       });
       b[7].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[7].style.display = "none";
         a[7].style.display = "block";
+        var abc = cart1.indexOf(input[7]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[8].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[8].style.display = "none";
         b[8].style.display = "block";
+        cart1.push(input[8]);
+        console.log(cart1);
       });
       b[8].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[8].style.display = "none";
         a[8].style.display = "block";
+        var abc = cart1.indexOf(input[8]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[9].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[9].style.display = "none";
         b[9].style.display = "block";
+        cart1.push(input[9]);
+        console.log(cart1);
       });
       b[9].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[9].style.display = "none";
         a[9].style.display = "block";
+        var abc = cart1.indexOf(input[9]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[10].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[10].style.display = "none";
         b[10].style.display = "block";
+        cart1.push(input[10]);
+        console.log(cart1);
       });
       b[10].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[10].style.display = "none";
         a[10].style.display = "block";
+        var abc = cart1.indexOf(input[10]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[11].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[11].style.display = "none";
         b[11].style.display = "block";
+        cart1.push(input[11]);
+        console.log(cart1);
       });
       b[11].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[11].style.display = "none";
         a[11].style.display = "block";
+        var abc = cart1.indexOf(input[11]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[12].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[12].style.display = "none";
         b[12].style.display = "block";
+        cart1.push(input[12]);
+        console.log(cart1);
       });
       b[12].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[12].style.display = "none";
         a[12].style.display = "block";
+        var abc = cart1.indexOf(input[12]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[13].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[13].style.display = "none";
         b[13].style.display = "block";
+        cart1.push(input[13]);
+        console.log(cart1);
       });
       b[13].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[13].style.display = "none";
         a[13].style.display = "block";
+        var abc = cart1.indexOf(input[13]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[14].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[14].style.display = "none";
         b[14].style.display = "block";
+        cart1.push(input[14]);
+        console.log(cart1);
       });
       b[14].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[14].style.display = "none";
         a[14].style.display = "block";
+        var abc = cart1.indexOf(input[14]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[15].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[15].style.display = "none";
         b[15].style.display = "block";
+        cart1.push(input[15]);
+        console.log(cart1);
       });
       b[15].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[15].style.display = "none";
         a[15].style.display = "block";
+        var abc = cart1.indexOf(input[15]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[16].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[16].style.display = "none";
         b[16].style.display = "block";
+        cart1.push(input[16]);
+        console.log(cart1);
       });
       b[16].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[16].style.display = "none";
         a[16].style.display = "block";
+        var abc = cart1.indexOf(input[16]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[17].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[17].style.display = "none";
         b[17].style.display = "block";
+        cart1.push(input[17]);
+        console.log(cart1);
       });
       b[17].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[17].style.display = "none";
         a[17].style.display = "block";
+        var abc = cart1.indexOf(input[17]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[18].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[18].style.display = "none";
         b[18].style.display = "block";
+        cart1.push(input[18]);
+        console.log(cart1);
       });
       b[18].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[18].style.display = "none";
         a[18].style.display = "block";
+        var abc = cart1.indexOf(input[18]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
       });
       a[19].addEventListener("click", function () {
         ++c;
         span.innerHTML = `${c}`;
         a[19].style.display = "none";
         b[19].style.display = "block";
+        cart1.push(input[19]);
+        console.log(cart1);
       });
       b[19].addEventListener("click", function () {
         --c;
         span.innerHTML = `${c}`;
         b[19].style.display = "none";
         a[19].style.display = "block";
+        var abc = cart1.indexOf(input[19]);
+        cart1.splice(abc, 1);
+        console.log(cart1);
+      });
+      nav.addEventListener("click", () => {
+        window.localStorage.setItem("cart", JSON.stringify(cart1));
+        window.open("./index1.html");
       });
     </script>
   </body>
