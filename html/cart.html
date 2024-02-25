@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .card {
+        margin: 10px 5px 5px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 240px;
+        height: 350px;
+        border: 5px solid black;
+        padding: 10px;
+      }
+      .photo {
+        min-width: 50%;
+        width: 200px;
+        /* min-width: 20%; */
+        height: 200px;
+      }
+      .title {
+        text-align: center;
+      }
+      .price {
+        margin-top: auto;
+        text-align: center;
+      }
+      button {
+        width: 100px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var a = localStorage.getItem("cart");
+      var b = JSON.parse(a);
+      var con = document.createElement("div");
+      con.setAttribute("class", "container");
+      document.body.appendChild(con);
+      cart1 = [];
+      for (let i = 0; i < b.length; i++) {
+        var div = document.createElement("div");
+        div.setAttribute("class", "card");
+        con.appendChild(div);
+        var img = document.createElement("img");
+        img.setAttribute("class", "photo");
+        div.appendChild(img);
+        var title = document.createElement("p");
+        var price = document.createElement("p");
+        title.setAttribute("class", "title");
+        price.setAttribute("class", "price");
+        div.appendChild(title);
+        div.appendChild(price);
+        img.setAttribute("src", `${b[i].image}`);
+        title.innerHTML = `${b[i].title}`;
+        price.innerHTML = `Price(₹): ${b[i].price}`;
+      }
+      var btn = document.createElement("button");
+      btn.innerHTML = "Close";
+      document.body.appendChild(btn);
+      btn.addEventListener("click", () => {
+        window.close();
+      });
+    </script>
+  </body>
+</html>
