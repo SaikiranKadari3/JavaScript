@@ -24,15 +24,17 @@
         flex-wrap: wrap;
         flex-direction: column;
         border: 2px solid black;
-        width: 320px;
+        width: 500px;
+        align-items: center;
+        justify-content: center;
         padding: 10px;
         gap: 10px;
         font-size: 20px;
         text-align: center;
       }
       img {
-        width: 300px;
-        height: 350px;
+        width: 200px;
+        height: 200px;
       }
     </style>
   </head>
@@ -41,17 +43,25 @@
       <img src="" alt="" />
       <p></p>
       <p></p>
+      <p></p>
+      <p></p>
     </div>
     <button>close</button>
     <script>
-      var a = window.localStorage.getItem("image");
-      var b = window.localStorage.getItem("title");
-      var c = window.localStorage.getItem("price");
+      var a = window.localStorage.getItem("data");
+      var b = JSON.parse(a);
       var img = document.getElementsByTagName("img");
       var p = document.getElementsByTagName("p");
-      img[0].setAttribute("src", a);
-      p[0].innerHTML = b;
-      p[1].innerHTML = `Price: ${c}`;
+      img[0].setAttribute("src", b.image);
+      p[0].innerHTML = b.title;
+      p[1].innerHTML = `Price: ${b.price}`;
+      p[3].innerHTML = `Category: ${b.category}`;
+      p[2].innerHTML = `${b.description}`;
+      var but = document.getElementsByTagName("button");
+      but[0].addEventListener("click", () => {
+        window.close();
+        console.log("j");
+      });
     </script>
   </body>
 </html>
