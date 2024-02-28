@@ -11,11 +11,31 @@
         border: 1px solid black;
         padding: 10px;
       }
+      button {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
-    <div onclick="change()"><span></span></div>
-
-    <script></script>
+    <div>
+      <button onclick="change()">Change</button>
+    </div>
+    <span></span>
+    <script>
+      function change() {
+        var d = document.getElementsByTagName("div");
+        console.log(d);
+        a = Math.floor(Math.random() * 256);
+        b = Math.floor(Math.random() * 256);
+        c = Math.floor(Math.random() * 256);
+        a1 = Math.floor(Math.random() * 256);
+        b1 = Math.floor(Math.random() * 256);
+        c1 = Math.floor(Math.random() * 256);
+        var s = document.getElementsByTagName("span");
+        d[0].style.backgroundColor = `rgb(${a},${b},${c})`;
+        s[0].innerHTML = `rgb(${a},${b},${c})`;
+        s[0].style.color = `rgb(${a1},${b1},${c1})`;
+      }
+    </script>
   </body>
 </html>
