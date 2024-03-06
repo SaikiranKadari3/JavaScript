@@ -16,6 +16,7 @@ input {
   height: 30px;
   outline: none;
   padding-left: 10px;
+  border: 1px solid black;
 }
 input::placeholder {
   text-align: center;

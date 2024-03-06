@@ -32,6 +32,7 @@ function weatherInfo(data) {
     name: city,
     main: { temp, humidity },
     wind: { speed },
+    weather: [{ description }],
   } = data;
   card.textContent = "";
   card.style.display = "flex";
@@ -39,14 +40,18 @@ function weatherInfo(data) {
   const tempDisplay = document.createElement("h2");
   const humDisplay = document.createElement("h2");
   const speedDisplay = document.createElement("h2");
+  const descDisplay = document.createElement("h2");
+
   cityDisplay.innerHTML = `City - ${city}`;
   tempDisplay.innerHTML = `Temperature - ${temp}°C`;
   humDisplay.innerHTML = `Humidity - ${humidity}%`;
   speedDisplay.innerHTML = `Wind - ${speed} km/h`;
+  descDisplay.innerHTML = `Climate - ${description}`;
   card.appendChild(cityDisplay);
   card.appendChild(tempDisplay);
   card.appendChild(humDisplay);
   card.appendChild(speedDisplay);
+  card.appendChild(descDisplay);
 }
 function displayError(message) {
   const errorDisplay = document.createElement("p");
