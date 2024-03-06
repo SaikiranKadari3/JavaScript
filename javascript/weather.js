@@ -36,9 +36,9 @@ function weatherInfo(data) {
   card.textContent = "";
   card.style.display = "flex";
   const cityDisplay = document.createElement("h1");
-  const tempDisplay = document.createElement("h1");
-  const humDisplay = document.createElement("h1");
-  const speedDisplay = document.createElement("h1");
+  const tempDisplay = document.createElement("h2");
+  const humDisplay = document.createElement("h2");
+  const speedDisplay = document.createElement("h2");
   cityDisplay.innerHTML = `City - ${city}`;
   tempDisplay.innerHTML = `Temperature - ${temp}°C`;
   humDisplay.innerHTML = `Humidity - ${humidity}%`;
