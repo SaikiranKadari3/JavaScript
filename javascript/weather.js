@@ -46,7 +46,7 @@ function weatherInfo(data) {
   tempDisplay.innerHTML = `Temperature - ${temp}°C`;
   humDisplay.innerHTML = `Humidity - ${humidity}%`;
   speedDisplay.innerHTML = `Wind - ${speed} km/h`;
-  descDisplay.innerHTML = `Climate - ${description}`;
+  descDisplay.innerHTML = `${description}`;
   card.appendChild(cityDisplay);
   card.appendChild(tempDisplay);
   card.appendChild(humDisplay);
